@@ -1,0 +1,77 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+#Git Ignore for this Project
+data
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# using json file instead of real database so data folder is created and db.json file is created inside it
+# and top level propery (blogs in db.json file) is known as resource and json-server uses that to perform CRUD operations (npx json-server --watch data/db.json --port 8000)
+
+
+# Modern Project Structure
+src/
+├── components/
+│   ├── common/         # Reusable components (Button, Input, Modal)
+│   ├── features/       # Feature-specific components
+│   └── layout/         # Layout components (Header, Footer, Sidebar)
+├── hooks/              # Custom React hooks
+├── utils/              # Helper functions
+├── services/           # API calls, external services
+├── store/              # State management (Redux/Zustand)
+├── types/              # TypeScript type definitions
+├── assets/             # Images, fonts, icons
+├── styles/             # Global CSS, theme
+├── pages/              # Page components (if using file-based routing)
+├── App.jsx/tsx
+├── main.jsx/tsx
+└── index.css
+
+# Installing tailwindcss
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+# Tailwind Configuration
+// tailwind.config.js
+// @type {import('tailwindcss').Config} 
+
+module.exports = {
+    content: [
+        "./src/**/*.{js,jsx,ts,tsx}",
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+}
+# Tailwind Directives in CSS
+// index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;    
+
+# Environment variables
+.env                # loaded in all cases
+.env.local          # loaded in all cases, ignored by git
+.env.development    # only loaded in dev
+.env.production     # only loaded in production
