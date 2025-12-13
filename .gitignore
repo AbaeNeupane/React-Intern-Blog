@@ -26,7 +26,8 @@ dist-ssr
 *.sw?
 
 # using json file instead of real database so data folder is created and db.json file is created inside it
-# and top level propery (blogs in db.json file) is known as resource and json-server uses that to perform CRUD operations (npx json-server --watch data/db.json --port 8000)
+# and top level propery (blogs in db.json file) is known as resource and json-server uses that to perform CRUD operations
+(npx json-server --watch data/db.json --port 8000) 
 
 
 # Modern Project Structure
