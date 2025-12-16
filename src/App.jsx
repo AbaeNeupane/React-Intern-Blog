@@ -11,6 +11,7 @@
 import './App.css'
 import Navbar from './Navbar';
 import Home from './Home';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 function App() {
@@ -26,15 +27,13 @@ function App() {
         <Navbar />
 
         <div className="content">
-          {/* <h1>{title}</h1>
-          <p>Likes: {likes}</p>
-          <p>{person.name} is {person.age} years old.</p>
-          <a href={link} target='blank'>Visit google.com</a> */}
-          {/* <p>{"Hello!, Abae."}</p>
-          <p>{[1,2,3,4,5]}</p> */}
 
-          <Home/>
-    
+  {/* Setting up Router for navigation between different components */}
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </Switch>
         </div>
       </div>
     
