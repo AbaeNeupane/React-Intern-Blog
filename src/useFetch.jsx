@@ -1,12 +1,5 @@
 import { useEffect, useState } from "react";
 
-
-const useFetch = (url) => {
-        const [_data, _setData] = useState(null);
-        const [_isPending, _setIsPending] = useState(true);
-        const [_error, _setError] = useState(null);
-
-
 /* This useEffect function runs for every render and runs initially when the component is mounted
     we can use dependency array as second argument to control when this function runs
     we can use it to see the updated state of blogs after deletion
@@ -32,30 +25,33 @@ const useFetch = (url) => {
         /blogs/{id} PUT - update a blog
     */ 
 
+const useFetch = (url) => {
+        const [data, setData] = useState(null);
+        const [isPending, setIsPending] = useState(true);
+        const [error, setError] = useState(null);
+
         useEffect(() => {
             setTimeout(() => {
                 fetch(url)
-                .then(res => {
-                    
-                    if(!res.ok) {
-                        throw Error('Could not fetch the data for that resource');
-                    }
-    
-                    return res.json();
-                })
-                .then(data => {
-                    _setData(data);
-                    _setIsPending(false);
-                    _setError(null);
-                })
-                .catch(err => {
-                    _setIsPending(false);
-                    _setError(err.message);
-                })
+                    .then(res => {
+                        if(!res.ok) {
+                            throw Error('Could not fetch the data for that resource');
+                        }
+                        return res.json();
+                    })  
+                    .then(data => {
+                        setData(data);
+                        setIsPending(false);
+                        setError(null);
+                    })
+                    .catch(err => {
+                        setIsPending(false);
+                        setError(err.message);
+                    })
             }, 300);
-            }, [url]);
+        }, [url]);
 
-    return { _data, _isPending, _error};
+    return { data, isPending, error };
 };
 
 export default useFetch;

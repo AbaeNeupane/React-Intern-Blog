@@ -1,6 +1,6 @@
 
 
-const BlogList = ({blogs, title, handelDelete}) => {
+const BlogList = ({ blogs, title, handelDelete }) => {
 
 
     return ( 
