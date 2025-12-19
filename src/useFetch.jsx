@@ -31,8 +31,10 @@ const useFetch = (url) => {
         const [error, setError] = useState(null);
 
         useEffect(() => {
+            const controller = new AbortController();
+
             setTimeout(() => {
-                fetch(url)
+                fetch(url, { signal: controller.signal })
                     .then(res => {
                         if(!res.ok) {
                             throw Error('Could not fetch the data for that resource');
@@ -48,7 +50,12 @@ const useFetch = (url) => {
                         setIsPending(false);
                         setError(err.message);
                     })
-            }, 300);
+            }, 100);
+
+            return () => {
+                // console.log('cleanup');
+                controller.abort();
+            }
         }, [url]);
 
     return { data, isPending, error };
