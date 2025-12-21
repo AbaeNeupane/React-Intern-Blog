@@ -138,6 +138,32 @@ a {
   margin-top: auto;
 }
 
+.blog-details h2 {
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 20px;
+}
+.blog-details p {
+  font-size: 1.1rem;
+  color: #374151;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+.blog-details div {
+  margin-bottom: 20px;
+  justify-self: center;
+}
+
+.blog-details {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 #del {
   margin-top: 15px;
   padding: 8px 12px;
@@ -147,6 +173,48 @@ a {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
+}
+
+/* ------------------------------
+   FORM STYLES
+--------------------------------*/
+form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 40px auto;
+}
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #111827;
+}
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+}
+form button {
+  padding: 10px 20px;
+  background: #4e89ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+form button:hover {
+  background: #3b6fd1;
 }
 
 /* ------------------------------
