@@ -31,6 +31,7 @@ const useFetch = (url) => {
         const [error, setError] = useState(null);
 
         useEffect(() => {
+            // AbortController to cancel fetch request if the component using this hook unmounts
             const controller = new AbortController();
 
             setTimeout(() => {
@@ -47,8 +48,13 @@ const useFetch = (url) => {
                         setError(null);
                     })
                     .catch(err => {
+                        if (err.name === 'AbortError') {
+                            console.log('Fetch aborted');
+                        }
+                        else {
                         setIsPending(false);
                         setError(err.message);
+                        }
                     })
             }, 100);
 
