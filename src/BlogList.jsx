@@ -1,7 +1,15 @@
 
 import { Link } from "react-router-dom";
-const BlogList = ({ blogs, title, handleDelete }) => {
+const BlogList = ({ blogs, title}) => {
 
+    const handleDelete = (id) => {
+        fetch('http://localhost:8000/blogs/' + id, {
+            method: 'DELETE'
+        }).then(() => {
+            console.log('blog deleted');
+            window.location.reload();
+        });
+    };
 
     return ( 
         <div className="blog-list">
