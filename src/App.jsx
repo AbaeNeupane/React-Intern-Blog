@@ -17,23 +17,6 @@ import Create from './Create'
 import BlogDetails from './BlogDetails'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-//     <Router>
-//       <div className="App">
-//         <Navbar />
-//         <div className="content">
-//           <Switch>
-//             <Route exact path="/">
-//               <Home />
-//             </Route>
-//             <Route exact path="/create">
-//               <Create />
-//             </Route>
-//           </Switch>
-//         </div>
-//       </div>
-    
-//     </Router>
-
 function App() {
   return (
     <Router>
