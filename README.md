@@ -1,5 +1,7 @@
 # React + Vite
 
+It has only frontend part and api was fed through json-server not by actual backend
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
